@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync 24/7 - Secure Data Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="CareSync 24/7 Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="monitoring.html">Real-time Health Monitoring</a></li>
+            <li><a href="diagnostics.html">AI-driven Diagnostics</a></li>
+            <li><a href="data_management.html">Secure Data Management</a></li>
+        </ul>
+    </div>
+
+    <!-- Secure Data Management Section -->
+    <div class="features">
+        <h2>Secure Data Management</h2>
+        <p>Our platform allows you to securely store and manage your health records. Below, you can access your past medical records and view detailed information.</p>
+        
+        <div class="data-records">
+            <div class="record-item">
+                <h3>Blood Test Results - 2024</h3>
+                <p>View your detailed blood test results from the last year. Download or share these securely with your healthcare provider.</p>
+                <button class="btn" onclick="viewRecord('Blood Test Results - 2024')">View Record</button>
+            </div>
+            <div class="record-item">
+                <h3>Annual Physical Exam - 2023</h3>
+                <p>Access your annual physical exam report including doctor's notes, lab results, and suggested follow-ups.</p>
+                <button class="btn" onclick="viewRecord('Annual Physical Exam - 2023')">View Record</button>
+            </div>
+            <div class="record-item">
+                <h3>MRI Scan - 2022</h3>
+                <p>Review your MRI scan images and the accompanying diagnostic report. Ensure your data is always available when you need it.</p>
+                <button class="btn" onclick="viewRecord('MRI Scan - 2022')">View Record</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions about your health data? Get in touch with us, and we’ll assist you in managing your health records securely.</p>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CareSync 24/7. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="scripts.js"></script>
+</body>
+</html>

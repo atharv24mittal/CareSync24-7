@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('background.webp');
+    background-size: cover;
+    background-position: center;
+    color: #e0f7fa; /* Light cyan text color */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+}
+
+.navbar .logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #e0f7fa;
+    text-decoration: none;
+    font-size: 22px; 
+}
+
+.features {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 48px; 
+    margin-bottom: 30px;
+}
+
+.features p {
+    font-size: 24px; 
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.data-records {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 30px;
+}
+
+.record-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.record-item h3 {
+    font-size: 28px; 
+    margin-bottom: 15px;
+}
+
+.record-item p {
+    font-size: 20px; 
+    margin-bottom: 20px;
+}
+
+.record-item .btn {
+    padding: 15px 25px;
+    background-color: #00796b; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; 
+}
+
+.record-item .btn:hover {
+    background-color: #004d40; 
+}
+
+.contact {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.contact h2 {
+    font-size: 48px; 
+    margin-bottom: 20px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; 
+}
+
+.contact button {
+    padding: 15px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; 
+}
+
+.contact button:hover {
+    background-color: #004d40;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #e0f7fa;
+    font-size: 18px; 
+    margin-top: 50px;
+}
+
+.team {
+    padding: 20px;
+}
+
+.team-grid {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-around; /* Space out team members evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.team-member {
+    text-align: center;
+    margin: 10px; /* Add some margin between team members */
+    max-width: 150px; /* Set a maximum width for team members */
+}
+
+.team-img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make images circular */
+}

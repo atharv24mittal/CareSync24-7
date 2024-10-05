@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-driven Diagnostics - CareSync 24/7</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .chatbox {
+            width: 100%;
+            height: 80vh;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .chatbox-header {
+            font-size: 36px; /* Increased font size */
+            margin-bottom: 10px;
+            color: #790008; /* Darker shade for contrast */
+        }
+        .chat-history {
+            max-height: 65%;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .user-message, .ai-response {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px; /* Increased font size */
+        }
+        .user-message {
+            background-color: #bbdefb;
+            text-align: right;
+            color: #0d47a1; /* Darker blue for user messages */
+        }
+        .ai-response {
+            background-color: #ffe082;
+            color: #5d4037; /* Dark brown for AI responses */
+        }
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        .input-text {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px; /* Increased font size */
+            color: #0d47a1; /* Darker shade for contrast */
+        }
+        .send-button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px; /* Increased font size */
+        }
+        .faq-section {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .faq-item h3 {
+            cursor: pointer;
+            color: #007BFF; /* Bright blue for question headers */
+            font-size: 22px; /* Increased font size */
+        }
+        .faq-item p {
+            display: none;
+            font-size: 18px; /* Increased font size for answers */
+            color: #424242; /* Dark grey for better readability */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="CareSync 24/7 Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2 style="font-size: 28px; color: #f00918;">AI-driven Diagnostics</h2>
+        <p style="font-size: 60px; font-weight: bold; color: red;">Disclaimer: AI can never replace real doctors!</p>
+        <p style="font-size: 24px; color: #f8f6f6;">Our AI-driven Diagnostics feature offers personalized insights into your health by analyzing your health data. Our AI algorithms are designed to detect potential health risks and recommend actionable steps, which you can discuss with your healthcare provider.</p>
+        <ul style="font-size: 18px; color: #fcf9f9;">
+            <li>Data-Driven Health Insights</li>
+            <li>Early Detection of Health Issues</li>
+            <li>Personalized Health Recommendations</li>
+        </ul>
+    </section>
+
+    <!-- Chatbox Section -->
+    <div class="chatbox">
+        <div class="chatbox-header">Chat with AI Diagnostics</div>
+        <div class="chat-history" id="chatHistory"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" class="input-text" placeholder="Type your message here..." />
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h1 style="font-size: 28px; color: #00796b;">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <h3>What are the symptoms of diabetes?</h3>
+            <p>Symptoms can include excessive thirst, frequent urination, and fatigue.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I manage hypertension?</h3>
+            <p>Management often includes diet changes, exercise, and medication.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the signs of a heart attack?</h3>
+            <p>Signs can include chest pain, shortness of breath, and nausea.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I cope with chronic pain?</h3>
+            <p>Coping can involve physical therapy, medication, and lifestyle changes.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the symptoms of asthma?</h3>
+            <p>Symptoms can include wheezing, shortness of breath, and coughing.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I improve my fitness?</h3>
+            <p>Improving fitness can involve regular exercise, balanced nutrition, and sufficient rest.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the signs of dehydration?</h3>
+            <p>Signs can include thirst, dry mouth, and fatigue.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I manage my weight effectively?</h3>
+            <p>Weight management often involves a balanced diet, regular exercise, and monitoring progress.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the symptoms of a stroke?</h3>
+            <p>Symptoms can include sudden numbness, confusion, and difficulty speaking.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I cope with allergies?</h3>
+            <p>Coping can involve avoiding triggers, taking medications, and seeking medical advice.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the signs of a respiratory infection?</h3>
+            <p>Signs can include cough, fever, and difficulty breathing.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I manage my cholesterol levels?</h3>
+            <p>Management often includes diet changes, exercise, and medication.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the symptoms of an autoimmune disease?</h3>
+            <p>Symptoms can vary widely but often include fatigue, joint pain, and skin changes.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I cope with insomnia?</h3>
+            <p>Coping can involve improving sleep hygiene, relaxation techniques, and seeking medical advice.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the signs of nutrient deficiency?</h3>
+            <p>Signs can include fatigue, hair loss, and skin issues.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I manage stress effectively?</h3>
+            <p>Managing stress can involve exercise, relaxation techniques, and seeking support.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the symptoms of digestive disorders?</h3>
+            <p>Symptoms can include bloating, abdominal pain, and changes in bowel habits.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I cope with migraines?</h3>
+            <p>Coping can involve identifying triggers, taking medication, and practicing relaxation techniques.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the signs of skin conditions?</h3>
+            <p>Signs can include rashes, itching, and changes in skin appearance.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I improve my heart health?</h3>
+            <p>Improving heart health can involve a balanced diet, regular exercise, and avoiding smoking.</p>
+        </div>
+    </div>
+
+    <script>
+        const responses = {
+            "What are the symptoms of diabetes?": "Symptoms can include excessive thirst, frequent urination, and fatigue.",
+            "How can I manage hypertension?": "Management often includes diet changes, exercise, and medication.",
+            "What are the signs of a heart attack?": "Signs can include chest pain, shortness of breath, and nausea.",
+            "How can I cope with chronic pain?": "Coping can involve physical therapy, medication, and lifestyle changes.",
+            "What are the symptoms of asthma?": "Symptoms can include wheezing, shortness of breath, and coughing.",
+            "How can I improve my fitness?": "Improving fitness can involve regular exercise, balanced nutrition, and sufficient rest.",
+            "What are the signs of dehydration?": "Signs can include thirst, dry mouth, and fatigue.",
+            "How can I manage my weight effectively?": "Weight management often involves a balanced diet, regular exercise, and monitoring progress.",
+            "What are the symptoms of a stroke?": "Symptoms can include sudden numbness, confusion, and difficulty speaking.",
+            "How can I cope with allergies?": "Coping can involve avoiding triggers, taking medications, and seeking medical advice.",
+            "What are the signs of a respiratory infection?": "Signs can include cough, fever, and difficulty breathing.",
+            "How can I manage my cholesterol levels?": "Management often includes diet changes, exercise, and medication.",
+            "What are the symptoms of an autoimmune disease?": "Symptoms can vary widely but often include fatigue, joint pain, and skin changes.",
+            "How can I cope with insomnia?": "Coping can involve improving sleep hygiene, relaxation techniques, and seeking medical advice.",
+            "What are the signs of nutrient deficiency?": "Signs can include fatigue, hair loss, and skin issues.",
+            "How can I manage stress effectively?": "Managing stress can involve exercise, relaxation techniques, and seeking support.",
+            "What are the symptoms of digestive disorders?": "Symptoms can include bloating, abdominal pain, and changes in bowel habits.",
+            "How can I cope with migraines?": "Coping can involve identifying triggers, taking medication, and practicing relaxation techniques.",
+            "What are the signs of skin conditions?": "Signs can include rashes, itching, and changes in skin appearance.",
+            "How can I improve my heart health?": "Improving heart health can involve a balanced diet, regular exercise, and avoiding smoking."
+        };
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput");
+            const chatHistory = document.getElementById("chatHistory");
+
+            // Create user message element
+            const userMessage = document.createElement("div");
+            userMessage.className = "user-message";
+            userMessage.textContent = userInput.value;
+            chatHistory.appendChild(userMessage);
+
+            // Get AI response based on user input
+            const aiResponseText = responses[userInput.value] || "Sorry, I don't have an answer for that.";
+            const aiResponse = document.createElement("div");
+            aiResponse.className = "ai-response";
+            aiResponse.textContent = aiResponseText;
+            chatHistory.appendChild(aiResponse);
+
+            // Clear input
+            userInput.value = "";
+            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
+        }
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>

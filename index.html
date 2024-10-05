@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSync 24/7 - Health Data Information & Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="CareSync 24/7 Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="overlay"></div>
+        <div class="home-content">
+            <h1>Welcome to CareSync 24/7</h1>
+            <p>Your Round-the-Clock Health Data Management Partner</p>
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <a href="realtime.html"><h3>Real-time Health Monitoring</h3></a>
+                <p>Access your health data and primary care services anytime, anywhere.</p>
+            </div>
+            <div class="feature-item">
+                <a href="ai_diagnostics.html"><h3>AI-driven Diagnostics</h3></a>
+                <p>Receive AI-powered health insights and personalized recommendations.</p>
+            </div>
+            <div class="feature-item">
+                <a href="data_management.html"><h3>Secure Data Management</h3></a>
+                <p>Your health data is protected with industry-standard encryption.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="pic1.jpg" alt="Team Member 1" class="team-img">
+                <h3>Atharv Mittal</h3>
+                <p>SRN: PES2UG23CS103</p>
+            </div>
+            <div class="team-member">
+                <img src="p2.jpg" alt="Team Member 2" class="team-img">
+                <h3>Anushree Sanjeev Sawant</h3>
+                <p>SRN: PES2UG23CS911</p>
+            </div>
+            <div class="team-member">
+                <img src="p3.jpg" alt="Team Member 3" class="team-img">
+                <h3>Arya Deshpande</h3>
+                <p>SRN: PES2UG23CS096</p>
+            </div>
+            <div class="team-member">
+                <img src="p4.jpg" alt="Team Member 4" class="team-img">
+                <h3>Anusha Shrivastava</h3>
+                <p>SRN: PES2UG23CS082</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CareSync 24/7. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Send an AJAX request
+                $.ajax({
+                    url: 'submit_form.php', // The URL to your PHP file
+                    type: 'POST',
+                    data: $(this).serialize(), // Serialize the form data
+                    success: function(response) {
+                        // Show the alert on success
+                        alert('Thank you for contacting us! We will reach out to you soon.');
+                    },
+                    error: function() {
+                        alert('Sorry, there was an error sending your message. Please try again later.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
